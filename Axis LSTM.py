@@ -86,9 +86,9 @@ def makeDummyTrades(symbol):
                         placeBuyOrder(symbol, current_price)
             elif current_price > predicted_price and stockOwned > 0:
                 balance += stockOwned * current_price
-                stockOwned = 0
                 for i in range(stockOwned):
                     placeSellOrder(symbol, current_price)
+                stockOwned = 0
 
         except Exception as e:
             print("Error occurred:", str(e))
